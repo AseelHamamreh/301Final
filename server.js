@@ -90,7 +90,7 @@ app.get('/favorite', function (req, res) {
 
 // end point and a function for deleting data in the favorite page from the data base:
 
-app.delete('/favorite', function (req, res) {
+app.delete('/favorite:slug', function (req, res) {
    const slug = req.params.slug;
    myModal.remove({slug:slug},(error,data)=>{
        if(error)
@@ -106,7 +106,7 @@ app.delete('/favorite', function (req, res) {
 
 // end point and a function for updating data in the favorite page from the data base:
 
-app.put('/favorite', function (req, res) {
+app.put('/favorite:slug', function (req, res) {
     const slug = req.params.slug;
     const {name,gender}= req.body;
     myModal.find({slug:slug},(error,data)=>{

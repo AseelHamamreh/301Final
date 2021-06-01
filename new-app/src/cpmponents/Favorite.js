@@ -27,14 +27,15 @@ export class Home extends Component {
     }
 
     // function to delete the favorite data from the data base:
-    deleteItem=async(slug)=>{
+    deleteItem = async (slug) => {
         console.log(slug);
-        const newData = await axios.delete(`${process.env.REACT_APP_BACKECNG_URL}/favorite/${slug}`);
-        console.log(newData);
-        this.setState({
-            favData:newData.data
-        })
-    }
+      const newData = await axios.delete(`${process.env.REACT_APP_BACKECNG_URL}/favorite${slug}`);
+  
+      this.setState({
+          favData: newData.data
+      });
+  }
+
 
     // function to show the updating form and setting states to the data that will be changed:
 
